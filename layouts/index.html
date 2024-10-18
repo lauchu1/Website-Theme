@@ -23,13 +23,69 @@
 {{ $reusablePages := $headless.Resources.ByType "page" }}
 {{ $reusablePages := sort $reusablePages ".Params.weight" }}
 {{ range first 1 $reusablePages }}
-<div id="home" class="strip bg-cover bg-position-top bg-overlay" style="background-image: url('{{ .Params.background | relURL }}');">
-  <div class="container pt-17 pb-17">
+<div id="home" class="strip bg-cover bg-position-top bg-overlay"></div>
+<div class="container ps-5 pe-5 pt-2">
+  <div class="row align-items-stretch">
+    <div class="col-lg-4 col-md-12 col-sm-12 d-flex flex-column rounded-start-2 mt-2 p-3" style="background-color: #3e85f8;">
+      <img height="50" width="50" src="images/phone-icon.png" class="mb-2">
+      <h3 class="text-primary text-capitalize" style="color: aliceblue !important;">Contact Us</h3>
+      <hr class="hr-text w-25" style="color: aliceblue;">
+      <p class="mb-3" style="color: aliceblue;"> 
+        Phone: (714) 861-4545<br>
+        Fax: (714) 861-4549<br>
+        Email: oclungdoctor@gmail.com
+      </p>
+      <div class="mt-auto">
+        <a class="button-white" href="/contact/">Location and More</a>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-12 col-sm-12 d-flex flex-column mt-2 p-3" style="background-color: #253daa;">
+      <img height="50" width="50" src="images/stethoscope-icon.png" class="mb-2">
+      <h3 class="text-primary text-capitalize" style="color: aliceblue !important;">Diseases We Treat</h3>
+      <hr class="hr-text w-25" style="color: aliceblue;">
+      <p class="mb-3" style="color: aliceblue;"> 
+        Asthma, COPD, sleep apnea, smoking cessation, and more
+      </p>
+      <div class="mt-auto">
+        <a class="button-white" href="/contact/">Our Services</a>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-12 col-sm-12 d-flex flex-column rounded-end-2 mt-2 p-3" style="background-color: #3e85f8;">
+      <img height="50" width="50" src="images/clock-icon.png" class="mb-2">
+      <h3 class="text-primary text-capitalize" style="color: aliceblue !important;">Opening Hours</h3>
+      <hr class="hr-text w-25" style="color: aliceblue;">
+      <p class="text-start mb-1" style="color: aliceblue;"> 
+        Monday - Friday
+        <span style="float:right;">
+          9:00am - 5:00pm
+        </span> 
+      </p>
+      <hr class="mt-0 mb-2" style="color: aliceblue;"> 
+      <p class="text-start mb-1" style="color: aliceblue;">
+        Saturday - Sunday
+        <span style="float:right;">
+          Closed
+        </span>
+      </p>
+      <hr class="mt-0 mb-2" style="color: aliceblue;"> 
+      
+    </div>
+  </div>
+</div>
+
+  </div>
+
+  <div class="container pt-7 pb-7">
     <div class="row">
-      <div class="col-12 col-md-6 offset-md-6">
+      <div class="col-sm-12 col-lg-6 col-md-6 align-self-center">
         <h2 class="text-primary text-capitalize">{{ .Title }}</h2>
         <p>{{ .Content }}</p>
-        <a class="button" href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a>
+        <a class="button mt-2" href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <img src= "{{ .Params.background | relURL }}" class= "w-100">
       </div>
     </div>
   </div>

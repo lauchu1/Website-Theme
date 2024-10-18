@@ -7,14 +7,17 @@
             {{ if .Site.Data.contact.phone }}
             <li><strong>Phone: </strong>{{ .Site.Data.contact.phone }}</li>
             {{ end }}
+            {{ if .Site.Data.contact.fax }}
+            <li><strong>Fax: </strong>{{ .Site.Data.contact.fax }}</li>
+            {{ end }}
             {{ if .Site.Data.contact.email }}
             <li><strong>Email: </strong><a href="mailto:{{ .Site.Data.contact.email }}">
                 {{ .Site.Data.contact.email }}</a></li>
               {{ end }}
           </ul>
-          <ul>
+          <!-- <ul>
             <li class="zerostatic"><a href="https://www.zerostatic.io">www.zerostatic.io</a></li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </div>
