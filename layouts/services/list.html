@@ -4,7 +4,19 @@
 
 {{ define "main" }}
 
+
 {{ partial "hero-image-setheight.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <img src="services/ebus.jpg">
+    </div>
+    <div class="col-9">
+      Our board-certified Pulmonary and Critical Care physician, Dr. Thomas Asciuto, together with our NCCPA nationally board-certified Physician Assistant, is dedicated to providing exceptional, personalized care for all your pulmonary needs.
+    </div>
+  </div>
+</div>
+
 {{ if .Content }}
 <div class="container pt-6 pt-md-10">
   <div class="row">
