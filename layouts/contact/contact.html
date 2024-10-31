@@ -14,17 +14,22 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-12 col-md-8">
+    <div class="col-lg-6 col-md-6 col-sm-12 align-self-center">
       {{ .Content }}
       <ul>
         
+        <!-- address -->
+        {{ if .Site.Data.contact.address }}
+        <li style="white-space: pre-wrap;"><strong>Address: </strong><br>{{ .Site.Data.contact.address }}</li>
+        {{ end }}
+
         <!-- phone -->
         {{ if .Site.Data.contact.phone }}
         <li><strong>Phone: </strong>{{ .Site.Data.contact.phone }}</li>
         {{ end }}
         
         <!-- fax -->
-        {{ if.Site.Data.contact.fax }}
+        {{ if .Site.Data.contact.fax }}
         <li><strong>Fax: </strong> {{ .Site.Data.contact.fax }}</li>
         {{ end}}
 
@@ -33,27 +38,20 @@
         <li><strong>Email: </strong><a href="mailto:{{ .Site.Data.contact.email }}">
             {{ .Site.Data.contact.email }}</a></li>
         {{ end }}
+        
+        <li><strong>Hours: </strong> </li>
+        <p> Monday - Friday: 9am - 5pm</p>
 
-        <!-- address -->
-        {{ if .Site.Data.contact.address }}
-        <li style="white-space: pre-wrap;"><strong>Address: </strong><br>{{ .Site.Data.contact.address }}</li>
-        {{ end }}
 
       </ul>
-      {{ if .Site.Data.contact.hours }}
-      <h4 class="mt-4">Business Hours</h4>
-      <table class="table table-sm opening-hours-table mb-6">
-        {{ range .Site.Data.contact.hours }}
-        <tr>
-          <td class="day font-weight-bold">{{ .day }}</td>
-          <td class="opens">{{ .open }}</td>
-          <td>-</td>
-          <td class="closes">{{ .close }}</td>
-        </tr>
-        {{ end }}
-      </table>
-      {{ end }}
+      
+
     </div>
+    
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <img src='map.jpg' class="img-fluid rounded-2">
+    </div>
+    
   </div>
-</div>
 {{ end }}
+
