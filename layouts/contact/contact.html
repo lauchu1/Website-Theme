@@ -12,44 +12,81 @@
     </div>
   </div>
 </div>
+
 <div class="container">
   <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-12 align-self-center">
+    <div class="col-lg-6 col-md-6 col-sm-12 align-self-center rounded-2 p-2" style="background-color: #3e85f8;">
       {{ .Content }}
-      <ul>
-        
-        <!-- address -->
-        {{ if .Site.Data.contact.address }}
-        <li style="white-space: pre-wrap;"><strong>Address: </strong><br>{{ .Site.Data.contact.address }}</li>
-        {{ end }}
+        <div class="row align-items-center">
+          <div class="col-2 text-center">
+            <img height="45" width="45" src="address-icon.png">
+          </div>
+          <div class="col-10 d-flex align-items-center">
+            <p style="color: aliceblue !important;">
+              18111 Brookhurst St, Suite 4600
+              <br>Fountain Valley, CA 92708
+              <br>*Complimentary valet offered to all patients
+            </p>
+          </div>
+        </div>
 
-        <!-- phone -->
-        {{ if .Site.Data.contact.phone }}
-        <li><strong>Phone: </strong>{{ .Site.Data.contact.phone }}</li>
-        {{ end }}
-        
-        <!-- fax -->
-        {{ if .Site.Data.contact.fax }}
-        <li><strong>Fax: </strong> {{ .Site.Data.contact.fax }}</li>
-        {{ end}}
+        <div class="row align-items-center">
+          <div class="col-2 text-center">
+            <img height="45" width="45" src="phone-icon.png">
+          </div>
+          <div class="col-10 d-flex align-items-center">
+            {{ if .Site.Data.contact.phone }}
+              <p style="color: aliceblue; margin: 0;">
+                {{ .Site.Data.contact.phone }}
+              </p>
+            {{ end }}
+          </div>
+        </div>
 
-        <!--email -->
-        {{ if .Site.Data.contact.email }}
-        <li><strong>Email: </strong><a href="mailto:{{ .Site.Data.contact.email }}">
-            {{ .Site.Data.contact.email }}</a></li>
-        {{ end }}
-        
-        <li><strong>Hours: </strong> </li>
-        <p> Monday - Friday: 9am - 5pm</p>
-
-
-      </ul>
+        <div class="row align-items-center">
+          <div class="col-2 text-center">
+            <img height="45" width="45" src="fax-icon.png">
+          </div>
+          <div class="col-10 d-flex align-items-center">
+            {{ if .Site.Data.contact.fax }}
+              <p style="color: aliceblue; margin: 0;">
+                {{ .Site.Data.contact.fax }}
+              </p>
+            {{ end }}
+          </div>
+        </div>
       
+
+        <div class="row align-items-center">
+          <div class="col-2 text-center">
+            <img height="45" width="45" src="email-icon.png">
+          </div>
+          <div class="col-10 d-flex align-items-center">
+            {{ if .Site.Data.contact.email }}
+            <p style="color: aliceblue !important; margin: 0;">
+              <a href="mailto:{{ .Site.Data.contact.email }}" class="link-light">
+              {{ .Site.Data.contact.email }}
+              </a>
+            </p>
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-2 text-center">
+            <img height="45" width="45" src="hours-icon.png">
+          </div>
+          <div class="col-10 d-flex align-items-center">
+            <p style="color: aliceblue !important; margin: 0">
+              Monday - Friday: 9AM - 5PM
+            </p>
+          </div>
+        </div>
 
     </div>
     
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      <img src='map.jpg' class="img-fluid rounded-2">
+    <div class="col-lg-6 col-md-6 col-sm-12 p-2" style="padding-bottom:50%; position:relative;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.3377448195547!2d-117.95732312414218!3d33.70020843623654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd270753b3497b%3A0xf0e874ffedc35822!2s18111%20Brookhurst%20St%2C%20Fountain%20Valley%2C%20CA%2092708!5e0!3m2!1sen!2sus!4v1730422268066!5m2!1sen!2sus" width="600" height="450" style="border:0; width: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     
   </div>
