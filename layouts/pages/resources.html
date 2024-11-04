@@ -1,0 +1,94 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-pages-aboutlayout{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+{{ partial "hero-image-setheight.html" (dict "background" .Params.heroBackground "heading" .Params.heroHeading "subheading" .Params.heroSubHeading "content" .)}}
+
+
+<div class="container pt-3 pb-3">
+    <div class="row">
+
+        <div class="col-sm-12 col-md-6 col-lg-6 align-self-center mb-2">
+            <h2 class="text-primary text-capitalize pt-2 pb-2">Insurance</h2>
+            <p><strong>We accept the following insurance plans:</strong></p>
+            <ul style="list-style-type: disc; padding-left: 20px;">
+                <li>Most Major PPOs</li>
+                <li>Medicare</li>
+                <li>Medicare Medi-Cal</li>
+                <li>HMOs</li>
+                <ul style="list-style-type: circle; padding-left: 20px;">
+                    <li>Greater Newport Physicians</li>
+                    <li>Edinger Medical Group</li>
+                    <li>Monarch HealthCare</li>
+                    <li>Optum (Healthcare Partners)</li>
+                </ul>
+            </ul>
+            
+            
+        </div>
+
+        <!-- <div class="col-sm-12 col-md-7 col-lg-7 align-self-center">
+            <img src="insurance.jpeg" class="rounded-4 align-self-center" style="height: 350px">
+        </div> -->
+
+        <div class="col-lg-4 col-md-4 col-sm-12 align-self-center rounded-2 p-2" style="background-color: #3e85f8;">
+            <h2 class="text-capitalize" style="color:aliceblue">Billing Questions?</h2>
+            <hr class="hr-text w-25" style="color: aliceblue;">
+            <div class="row align-items-center">
+                <div class="col-2 text-center">
+                  <img height="45" width="45" src="phone-icon.png">
+                </div>
+                <div class="col-10 d-flex align-items-center">
+                  <p style="color: aliceblue !important;">
+                    (800) 804-7966
+                  </p>
+                </div>
+              </div>
+      
+              <div class="row align-items-center">
+                <div class="col-2 text-center">
+                  <img height="45" width="45" src="email-icon.png">
+                </div>
+                <div class="col-10 d-flex align-items-center">
+                    <p style="color: aliceblue; margin: 0;">
+                        patients@argusmso.net
+                    </p>
+               
+                </div>
+              </div>
+           
+              <div class="row align-items-center">
+                <div class="col-2 text-center">
+                  <img height="45" width="45" src="hours-icon.png">
+                </div>
+                <div class="col-10 d-flex align-items-center">
+                    <p style="color: aliceblue; margin: 0;">
+                        Monday-Friday: 9:00am-5:00pm
+                    </p>
+              
+                </div>
+              </div>
+            
+        </div>
+    </div>
+        
+    <div class="row pt-2">
+        <hr>
+        <div class="col-12 mb-2">
+            <h2 class="text-primary text-capitalize pt-2 pb-2">New Patient Forms</h2>
+            <p>
+                Please download the forms as instructed by our office staff. You can print and complete them at home to reduce your wait time during your visit. If you have any questions, don’t hesitate to call us. If you prefer or don’t have access to a printer, you can complete your paperwork at the office. This option is available for your convenience.
+            </p>
+            
+            <a class="button mt-1" href="patient-forms.pdf" download="New Patient Forms.pdf">Download Forms</a>
+            
+        </div>
+    </div>
+      
+  </div> 
+
+
+{{ .Content }}
+
+{{ end }}
