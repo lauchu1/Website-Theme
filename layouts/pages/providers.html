@@ -8,21 +8,23 @@
 {{ $headless := .Site.GetPage "/pages/providers" }}
 {{ $subpages := $headless.Resources.ByType "page" }}
 {{ $subpages := sort $subpages ".Params.weight" }}
-{{ range $subpages }}
-<!--<div class="strip bg-cover bg-position-top bg-overlay" style="background-image: url('{{ .Params.background | relURL }}');">-->
-  <div class="container pt-3 pb-3">
-    <div class="row">
-        <img src="{{ .Params.background | relURL }}" alt="profile picture" class="col-sm-12 col-md-5 col-lg-3 rounded-4 h-100 align-self-center">
-        <div class="col-sm-12 col-md-7 col-lg-9 align-self-center">
-          <h2 class="text-primary text-capitalize pt-2 pb-2">{{ .Title }}</h2>
-          {{ .Content }}
-          {{ if .Params.button }}
-            <a class="button" href="{{ .Params.buttonLink | relURL }}">{{ .Params.button }}</a>
-          {{ end }}
+{{ range $index, $subpage := $subpages }}
+
+<div class="container mt-3 nb-3">
+    <div class="row mt-3 mb-1">
+        <div class="text-center">
+            <img src="{{ $subpage.Params.background | relURL }}" alt="profile picture" class="rounded-circle h-100 align-self-center" style="width: 250px;">
         </div>
-      
+        <div>
+            <h2 class="text-primary text-capitalize pt-2 pb-2 text-center">{{ $subpage.Title }}</h2>
+            {{ $subpage.Content }}
+        </div>
     </div>
-  </div> 
+
+    {{ if lt $index (sub (len $subpages) 1) }}
+        <hr>
+    {{ end }}
+</div>
 
 {{ end }}
 
