@@ -3,13 +3,15 @@
     <div class="container">
       <div class="row justify-content-center align-items-center p-0">
         <div class="col-auto p-0">
-          <a href="{{ .Site.BaseURL }}">
-            <img height="{{ .Site.Params.logo.desktop_height }}" width="{{ .Site.Params.logo.desktop_width }}" alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.desktop | relURL }}" />
-          </a>
+            <a href="{{ .Site.BaseURL }}">
+              <img class="header-image" height="{{ .Site.Params.logo.desktop_height }}" width="{{ .Site.Params.logo.desktop_width }}" alt="{{ .Site.Params.logo.alt }}" src="{{ .Site.Params.logo.desktop | relURL }}" />
+            </a>
         </div>
         <div class="col-auto text-center p-0">
-          <p class="lead mb-0 lh-1.2 p-0"><strong>Thomas Asciuto MD Corp</strong></p>
+          <div class="header-text">
+            <p class="lead mb-0 lh-1.2 p-0"><strong>Thomas Asciuto MD Corp</strong></p>
           <p class="mb-0 lh-1 p-0" style="color: #1c3e80;"><strong>OC Lung Doctor</strong></p>
+          </div>
         </div>
       </div>
     </div>
